@@ -88,7 +88,7 @@ a{
     background: white;
     padding:0.2rem;
     height:0rem;
-    min-height: 20vh;
+    min-height: 10vh;
     overflow:hidden;
     transition:height 1s ease-in-out;
 }
@@ -306,7 +306,7 @@ main .post-content .post-title a{
 }
 
 .site-content .pagination{
-    justify-content: center;
+    justify-content:center;
     color:var(--text-gray);
     margin:4rem 0;
 }
@@ -452,14 +452,82 @@ main .post-content .post-title a{
      padding:0.4rem;
  }
 
+ .footer.footer .rights{
+     justify-content:center;
+     font-family:var(--Josefin);
+ }
+
+ .footer.footer .move-up{
+     position:absolute;
+     right:6%;
+     top:50%;
+ }
+
+  .footer.footer .move-up span{
+      color:var(--midnight);
+  }
+
+  .footer.footer .move-up span:hover{
+      color:var(--white);
+      cursor:pointer;
+  }
+  /* -------Viewport less than or equal to 1130px----------- */
+   @media only screen and (max-width:1130px){
+       .site-content .post-content>.post-image .post-info{
+           left:2rem !important;
+           bottom:1.2rem !important;
+           border-radius:0% !important; 
+       }
+
+       .site-content .sidebar .popular-post .post-info{
+           display:none !important;
+       }
+
+       .footer.footer .container{
+           grid-template-columns:repeat(2,1fr);
+       }
+   }
+
 /* -------Viewport less than or equal to 750px----------- */
 @media only screen and (max-widh:750px){
-    .nav .nav-menu{
-        flex-direction: column;
+    .nav .nav-menu, .nav .nav-items{
+        flex-direction:column;
     }
 
     .nav .toggle-collapse{
         display:initial;
     }
+
+    main .site-content{
+     grid-template-columns:100%;
+    }
+
+    .footer.footer .container{
+        grid-template-columns:repeat(1, 1fr);
+    }
 }
 /* -------X---Viewport less than or equal to 750px------X----------- */
+
+/* -------Viewport less than or equal to 520px----------- */
+@media only screen and (max-width:520px){
+    main .blog{
+        height:125; 
+    }
+
+    .site-content .post-content>.post-image .post-info{
+        display:none;
+    }
+
+    .footer.footer .container>div{
+        padding:1rem .9rem !important;
+    }
+
+    footer .rights{
+        padding:0 1.4rem;
+        text-align: center;
+    }
+
+    nav .toggle-collapse{
+        width:80% !important;
+    }
+}
